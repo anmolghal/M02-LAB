@@ -1,0 +1,34 @@
+# Author: [Your Name]
+# File Name: student_qualifications.py
+# Description: This Python app accepts student names and GPAs, checks if they qualify
+#              for the Dean's List or Honor Roll based on GPA, and prints appropriate messages.
+
+def main():
+    print("Welcome to the Student Qualifications App!")
+    print("Enter 'ZZZ' for the last name to quit.")
+
+    while True:
+        last_name = input("\nEnter student's last name: ")
+        
+        if last_name == 'ZZZ':
+            print("Exiting the program.")
+            break
+        
+        first_name = input("Enter student's first name: ")
+        try:
+            gpa = float(input("Enter student's GPA: "))
+        except ValueError:
+            print("Invalid input for GPA. Please enter a valid number.")
+            continue
+        
+        if gpa >= 3.5:
+            print(f"{first_name} {last_name} has made the Dean's List!")
+        elif gpa >= 3.25:
+            print(f"{first_name} {last_name} has made the Honor Roll!")
+        else:
+            print(f"{first_name} {last_name} does not qualify for Dean's List or Honor Roll.")
+    
+    print("Program ended.")
+
+if __name__ == "__main__":
+    main()
